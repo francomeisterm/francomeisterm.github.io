@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Francis Marlou Pacaro · IT Infrastructure</title>
-<meta name="description" content="Francis Marlou Pacaro is an IT Infrastructure Senior Associate in Metro Manila with 5+ years across network security, Linux and Windows servers, virtualization, and endpoint management.">
+<meta name="description" content="Francis Marlou Pacaro is an IT Infrastructure Senior Associate in Metro Manila with 5+ years across network security, Linux and Windows servers, virtualization, and endpoint management, and a Linux kernel contributor.">
 <meta name="author" content="Francis Marlou Pacaro">
 <link rel="canonical" href="https://francomeisterm.github.io/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -229,6 +229,14 @@ section.block { padding: 64px 0 8px; }
   display: flex; gap: 8px; align-items: baseline;
 }
 .card .result::before { content: ""; flex: 0 0 7px; height: 7px; border-radius: 50%; background: var(--accent); transform: translateY(-2px); }
+.card.featured { grid-column: 1 / -1; border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.card.featured h3 { font-size: 22px; }
+.card code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: .92em; background: var(--chip-bg); color: var(--chip-ink); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 700; font-size: 15px; color: var(--accent-text); text-decoration: none; }
+.card-link:hover { text-decoration: underline; }
+.card-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-top: auto; padding-top: 16px; }
+.card-footer .tags { margin-top: 0; padding-top: 0; }
+.card-footer .card-link { margin-top: 0; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; list-style: none; margin-bottom: 0; padding-left: 0; }
 .tags li, .chips li {
   background: var(--chip-bg); color: var(--chip-ink);
@@ -342,7 +350,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
       <div class="stat" role="listitem"><b>5+ yrs</b><span>in IT infrastructure and technical support</span></div>
       <div class="stat" role="listitem"><b>497 / 500</b><span>infrastructure tickets closed in five months (May–Sep 2026)</span></div>
       <div class="stat" role="listitem"><b>39.9%</b><span>fewer daily SSH brute-force attempts after perimeter blocking</span></div>
-      <div class="stat" role="listitem"><b>4</b><span>enterprise clients supported: L'Oréal, British Council, Globe Telecom, Dell</span></div>
+      <div class="stat" role="listitem"><b>Linux 7.3</b><span>includes my amdgpu display driver fix (merged in 7.3-rc4)</span></div>
     </div>
   </div>
 
@@ -353,12 +361,13 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
       <div class="about">
         <div>
           <p>I work in IT infrastructure at Prople BPO, where I look after the network, servers, and endpoints that internal teams and client accounts rely on every day. My work spans Cisco Firepower perimeter changes, Linux and Windows server administration, VM provisioning, Active Directory, and hands-on support for enterprise clients such as L'Oréal.</p>
-          <p>I like problems that end with a clear root cause and a written-up fix. Outside work I run a Linux homelab on CachyOS, where I tune kernels, shape traffic, and script everything I can in Fish and Bash.</p>
+          <p>I like problems that end with a clear root cause and a written-up fix. Outside work I run a Linux homelab on CachyOS, where I tune kernels, shape traffic, and script everything I can in Fish and Bash. When my RX 6600 hit a driver bug, I tracked it down and got the fix merged into the Linux kernel.</p>
         </div>
         <div class="facts">
           <dl>
             <dt>Focus</dt><dd>Network security, servers, endpoints</dd>
             <dt>Current</dt><dd>Prople BPO Inc.</dd>
+            <dt>Open source</dt><dd>Linux kernel contributor (amdgpu)</dd>
             <dt>Degree</dt><dd>BS Computer Engineering</dd>
             <dt>Based in</dt><dd>Pasig City, Philippines</dd>
             <dt>Languages</dt><dd>Filipino, Cebuano, English</dd>
@@ -373,6 +382,16 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
       <p class="section-title">Selected work</p>
       <h2 class="section-heading">Projects I've delivered</h2>
       <div class="cards">
+        <article class="card featured">
+          <p class="meta">2026 · Upstream Linux kernel (drm/amd)</p>
+          <h3>Linux Kernel Fix: amdgpu MALL Hysteresis Timer Underflow</h3>
+          <p>My RX 6600 threw a kernel warning at high refresh rates. I traced it to <code>dcn30_apply_idle_power_optimizations()</code>, where an unsigned underflow made the MALL hysteresis timer impossible to encode, so every DCN 3.0 display above ~243 Hz silently lost MALL static-screen power savings. I wrote a patch that clamps the timer to the shortest value the register can hold, and documented the reproduction from 144 Hz to 360 Hz.</p>
+          <p class="result">Reviewed by AMD and merged into mainline Linux 7.3-rc4 (September 2026).</p>
+          <div class="card-footer">
+            <ul class="tags"><li>C</li><li>Linux kernel</li><li>amdgpu / DCN 3.0</li><li>Debugging</li></ul>
+            <a class="card-link" href="https://github.com/torvalds/linux/commit/2ac2fe765ef475f409616ac0b57c4a3922749b0f" target="_blank" rel="noopener">View the commit →</a>
+          </div>
+        </article>
         <article class="card">
           <p class="meta">2026 · Prople BPO</p>
           <h3>SSH Hardening &amp; Perimeter Threat Blocking</h3>
@@ -474,7 +493,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
         </div>
         <div class="skill-group">
           <h3>Systems &amp; Virtualization</h3>
-          <ul class="chips"><li>Linux (CentOS) administration</li><li>VM provisioning</li><li>Windows Server</li><li>Synology NAS / SFTP</li><li>UptimeRobot monitoring</li><li>Bash / Fish scripting</li></ul>
+          <ul class="chips"><li>Linux (CentOS) administration</li><li>VM provisioning</li><li>Windows Server</li><li>Synology NAS / SFTP</li><li>UptimeRobot monitoring</li><li>Bash / Fish scripting</li><li>C (Linux kernel)</li><li>Kernel debugging</li></ul>
         </div>
         <div class="skill-group">
           <h3>Identity &amp; Endpoint</h3>
