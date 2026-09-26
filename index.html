@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Francis Marlou Pacaro · IT Infrastructure</title>
+<meta name="description" content="Francis Marlou Pacaro is an IT Infrastructure Senior Associate in Metro Manila with 5+ years across network security, Linux and Windows servers, virtualization, and endpoint management.">
+<meta name="author" content="Francis Marlou Pacaro">
+<link rel="canonical" href="https://francomeisterm.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1a3342">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francomeisterm.github.io/">
+<meta property="og:title" content="Francis Marlou Pacaro · IT Infrastructure">
+<meta property="og:description" content="IT Infrastructure Senior Associate: network security, Linux and Windows servers, virtualization, and endpoint management.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="fonts/quicksand-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/quicksand-700.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // Apply a saved theme before first paint so there is no flash.
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+<style>
+@font-face { font-family: "Quicksand"; font-weight: 400; font-display: swap; src: url("fonts/quicksand-400.woff2") format("woff2"); }
+@font-face { font-family: "Quicksand"; font-weight: 500; font-display: swap; src: url("fonts/quicksand-500.woff2") format("woff2"); }
+@font-face { font-family: "Quicksand"; font-weight: 600; font-display: swap; src: url("fonts/quicksand-600.woff2") format("woff2"); }
+@font-face { font-family: "Quicksand"; font-weight: 700; font-display: swap; src: url("fonts/quicksand-700.woff2") format("woff2"); }
+
+:root {
+  --bg: #ffffff;
+  --surface: #f4f6f7;
+  --card: #ffffff;
+  --ink: #1b1f22;
+  --muted: #5b6870;
+  --line: #dde3e6;
+  --navy: #1a3342;
+  --on-navy: #ffffff;
+  --accent: #ea453f;       /* bars, blocks, large text only */
+  --accent-text: #c9302a;  /* small text: 5.3:1 on white */
+  --chip-bg: #e7edf0;
+  --chip-ink: #1a3342;
+  --btn-bg: #1a3342;
+  --btn-ink: #ffffff;
+  --shadow: 0 1px 2px rgba(16, 32, 42, .06), 0 6px 20px rgba(16, 32, 42, .06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1a21;
+    --surface: #132229;
+    --card: #15252e;
+    --ink: #e6ecef;
+    --muted: #9fb0b9;
+    --line: #24363f;
+    --navy: #2a4a5e;
+    --on-navy: #ffffff;
+    --accent: #ff6b64;
+    --accent-text: #ff7a73;
+    --chip-bg: #22394a;
+    --chip-ink: #d9e4ea;
+    --btn-bg: #e6ecef;
+    --btn-ink: #0e1a21;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1a21;
+  --surface: #132229;
+  --card: #15252e;
+  --ink: #e6ecef;
+  --muted: #9fb0b9;
+  --line: #24363f;
+  --navy: #2a4a5e;
+  --on-navy: #ffffff;
+  --accent: #ff6b64;
+  --accent-text: #ff7a73;
+  --chip-bg: #22394a;
+  --chip-ink: #d9e4ea;
+  --btn-bg: #e6ecef;
+  --btn-ink: #0e1a21;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html, body { overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Quicksand", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img, svg { display: block; }
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+p { margin: 0; }
+
+.container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 640px) { .container { padding: 0 16px; } body { font-size: 16px; } }
+
+.skip {
+  position: absolute; left: 12px; top: -48px; z-index: 100;
+  background: var(--btn-bg); color: var(--btn-ink);
+  padding: 8px 14px; border-radius: 6px; text-decoration: none;
+}
+.skip:focus { top: 12px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .container { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; }
+.monogram {
+  position: relative; width: 36px; height: 36px; border-radius: 8px; overflow: hidden;
+  background: var(--navy); color: var(--on-navy);
+  display: grid; place-items: center; font-size: 15px; font-weight: 700; letter-spacing: .5px;
+}
+.monogram::after { content: ""; position: absolute; left: 0; right: 0; bottom: 5px; height: 4px; background: var(--accent); }
+.monogram span { transform: translateY(-2px); }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a {
+  text-decoration: none; color: var(--muted); font-weight: 600; font-size: 15px;
+  padding: 8px 10px; border-radius: 6px;
+}
+.nav a:hover { color: var(--ink); background: var(--surface); }
+.theme-toggle {
+  margin-left: 6px; width: 38px; height: 38px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  display: grid; place-items: center; cursor: pointer;
+}
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
+}
+@media (max-width: 760px) { .nav a { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { padding: 72px 0 40px; }
+.hero-inner { position: relative; }
+.hero-inner::before {
+  content: ""; position: absolute; top: 6px; right: calc(100% + 20px);
+  width: 100vw; height: 64px; background: var(--navy);
+}
+@media (max-width: 640px) { .hero-inner::before { right: calc(100% + 8px); height: 44px; top: 4px; } }
+.hero h1 { font-size: clamp(36px, 6vw, 58px); font-weight: 600; color: var(--ink); letter-spacing: -.5px; }
+.hero .role { margin-top: 8px; font-size: clamp(20px, 2.6vw, 26px); font-weight: 600; color: var(--accent); }
+.hero .lede { margin-top: 20px; max-width: 680px; font-size: 19px; color: var(--muted); }
+@media (max-width: 640px) { .hero { padding: 48px 0 28px; } .hero .lede { font-size: 17px; } }
+.cta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 8px; text-decoration: none;
+  font-weight: 700; font-size: 15px; border: 1.5px solid var(--line);
+  background: var(--card); color: var(--ink);
+  transition: border-color .15s, transform .15s;
+}
+.btn:hover { border-color: var(--ink); }
+.btn.primary { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
+.btn.primary:hover { transform: translateY(-1px); }
+.btn svg { width: 18px; height: 18px; fill: currentColor; }
+.hero .where { margin-top: 20px; display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 15px; }
+.hero .where svg { width: 16px; height: 16px; fill: var(--accent-text); }
+
+/* ---------- Stats ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
+.stat {
+  background: var(--surface); border-radius: 10px; padding: 18px 18px 16px;
+  border-top: 4px solid var(--accent);
+}
+.stat b { display: block; font-size: 32px; font-weight: 700; line-height: 1.1; color: var(--ink); }
+.stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.4; }
+@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .stat b { font-size: 26px; } }
+
+/* ---------- Sections ---------- */
+section.block { padding: 64px 0 8px; }
+@media (max-width: 640px) { section.block { padding-top: 48px; } }
+.section-title {
+  font-size: 15px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--accent-text); margin-bottom: 8px;
+}
+.section-heading { font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; margin-bottom: 24px; }
+
+.about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+.about p + p { margin-top: 14px; }
+.about .facts { background: var(--surface); border-radius: 10px; padding: 20px 22px; }
+.facts dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; font-size: 15px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 600; }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ---------- Work cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+.card {
+  position: relative; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 24px 24px 20px 30px; box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+}
+.card::before {
+  content: ""; position: absolute; left: 0; top: 26px; width: 8px; height: 44px;
+  background: var(--accent); border-radius: 0 3px 3px 0;
+}
+.card .meta { font-size: 14px; font-style: italic; color: var(--accent-text); }
+.card h3 { font-size: 20px; font-weight: 700; margin: 4px 0 10px; }
+.card p { font-size: 15.5px; color: var(--muted); }
+.card .result {
+  margin-top: 12px; font-size: 15px; color: var(--ink); font-weight: 600;
+  display: flex; gap: 8px; align-items: baseline;
+}
+.card .result::before { content: ""; flex: 0 0 7px; height: 7px; border-radius: 50%; background: var(--accent); transform: translateY(-2px); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; list-style: none; margin-bottom: 0; padding-left: 0; }
+.tags li, .chips li {
+  background: var(--chip-bg); color: var(--chip-ink);
+  font-size: 13.5px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+}
+
+/* ---------- Experience ---------- */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.job { position: relative; padding: 0 0 30px 30px; }
+.job::before {
+  content: ""; position: absolute; left: 0; top: 4px; width: 8px; height: 44px;
+  background: var(--accent); border-radius: 0 3px 3px 0;
+}
+.job:first-child::before { background: var(--navy); }
+.job h3 { font-size: 20px; font-weight: 700; }
+.job .org { font-size: 17px; margin-top: 2px; }
+.job .when { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-top: 4px; font-size: 14px; font-style: italic; color: var(--accent-text); }
+.job ul { margin: 10px 0 0; padding: 0; list-style: none; }
+.job li { position: relative; padding-left: 18px; margin-top: 6px; font-size: 16px; }
+.job li::before {
+  content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px;
+  border-radius: 50%; background: var(--accent);
+}
+
+/* ---------- Skills ---------- */
+.skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 760px) { .skill-groups { grid-template-columns: 1fr; } }
+.skill-group { background: var(--surface); border-radius: 12px; padding: 20px 22px; }
+.skill-group h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+.skill-group.wide { grid-column: 1 / -1; background: transparent; border: 1px solid var(--line); }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; margin: 0; padding: 0; }
+.chips.soft li { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--ink); }
+
+/* ---------- Education ---------- */
+.edu { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+@media (max-width: 760px) { .edu { grid-template-columns: 1fr; } }
+.edu-card { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; background: var(--card); }
+.edu-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+.edu-item + .edu-item { margin-top: 14px; }
+.edu-item b { display: block; font-weight: 700; }
+.edu-item span { display: block; font-size: 14.5px; color: var(--muted); }
+.trainings { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.trainings li { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; border-bottom: 1px dashed var(--line); padding-bottom: 8px; }
+.trainings li:last-child { border-bottom: 0; padding-bottom: 0; }
+.trainings small { color: var(--muted); font-size: 13.5px; white-space: nowrap; }
+.trainings em { display: block; font-style: normal; color: var(--muted); font-size: 13.5px; }
+
+/* ---------- Contact ---------- */
+.contact-band { margin-top: 72px; background: #1a3342; color: #ffffff; }
+.contact-band .container { padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.contact-band h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; }
+.contact-band p { margin-top: 8px; color: #c9d6de; max-width: 520px; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact-links .btn { background: transparent; color: #ffffff; border-color: rgba(255, 255, 255, .35); }
+.contact-links .btn:hover { border-color: #ffffff; }
+.contact-links .btn.primary { background: #ffffff; color: #1a3342; border-color: #ffffff; }
+footer { background: #13262f; color: #9fb4bf; font-size: 14px; }
+footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="Francis Marlou Pacaro, back to top">
+      <span class="monogram" aria-hidden="true"><span>FP</span></span>
+      <span>Francis Pacaro</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-inner">
+        <h1>Francis Marlou Pacaro</h1>
+        <p class="role">IT Infrastructure Senior Associate</p>
+        <p class="lede">I keep networks, servers, and endpoints secure and running for a multi-client BPO in Metro Manila, from firewall and core-switch changes to Linux hardening and automated workstation deployment.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:pacaro.francis.marlou.n@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.4l8 5.2 8-5.2V7H4zm16 2.8-8 5.2-8-5.2V17h16V9.8z"/></svg>Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/francomeister" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm3.3 7.6V19h3V9.6h-3zm1.5-4.7a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zM11.1 9.6V19h2.9v-4.7c0-1.2.3-2.4 1.8-2.4s1.5 1.4 1.5 2.5V19h3v-5.2c0-2.6-.6-4.5-3.6-4.5-1.5 0-2.4.8-2.8 1.5V9.6h-2.8z"/></svg>LinkedIn</a>
+          <a class="btn" href="https://github.com/francomeisterm" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5a10.5 10.5 0 0 0-3.3 20.5c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.5-1.2-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>GitHub</a>
+          <a class="btn" id="cv-link" href="Francis_Pacaro_CV.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v9.2l3.3-3.3 1.4 1.4L12 16l-5.7-5.7 1.4-1.4 3.3 3.3V3zM4 18h16v2H4v-2z"/></svg>Download CV</a>
+        </div>
+        <p class="where">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5a7 7 0 0 0-7 7c0 5.2 7 14 7 14s7-8.8 7-14a7 7 0 0 0-7-7zm0 9.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z"/></svg>
+          Pasig City, Philippines
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b>5+ yrs</b><span>in IT infrastructure and technical support</span></div>
+      <div class="stat" role="listitem"><b>497 / 500</b><span>infrastructure tickets closed in five months (May–Sep 2026)</span></div>
+      <div class="stat" role="listitem"><b>39.9%</b><span>fewer daily SSH brute-force attempts after perimeter blocking</span></div>
+      <div class="stat" role="listitem"><b>4</b><span>enterprise clients supported: L'Oréal, British Council, Globe Telecom, Dell</span></div>
+    </div>
+  </div>
+
+  <section class="block" id="about">
+    <div class="container">
+      <p class="section-title">About</p>
+      <h2 class="section-heading">Infrastructure that stays up and stays safe</h2>
+      <div class="about">
+        <div>
+          <p>I work in IT infrastructure at Prople BPO, where I look after the network, servers, and endpoints that internal teams and client accounts rely on every day. My work spans Cisco Firepower perimeter changes, Linux and Windows server administration, VM provisioning, Active Directory, and hands-on support for enterprise clients such as L'Oréal.</p>
+          <p>I like problems that end with a clear root cause and a written-up fix. Outside work I run a Linux homelab on CachyOS, where I tune kernels, shape traffic, and script everything I can in Fish and Bash.</p>
+        </div>
+        <div class="facts">
+          <dl>
+            <dt>Focus</dt><dd>Network security, servers, endpoints</dd>
+            <dt>Current</dt><dd>Prople BPO Inc.</dd>
+            <dt>Degree</dt><dd>BS Computer Engineering</dd>
+            <dt>Based in</dt><dd>Pasig City, Philippines</dd>
+            <dt>Languages</dt><dd>Filipino, Cebuano, English</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="container">
+      <p class="section-title">Selected work</p>
+      <h2 class="section-heading">Projects I've delivered</h2>
+      <div class="cards">
+        <article class="card">
+          <p class="meta">2026 · Prople BPO</p>
+          <h3>SSH Hardening &amp; Perimeter Threat Blocking</h3>
+          <p>Analyzed 37 days of SSH authentication and firewall connection logs, profiled the attacking sources by network (ASN), and deployed a Cisco FMC Security Intelligence blocklist at the perimeter.</p>
+          <p class="result">Daily brute-force attempts down 39.9%, with no compromise.</p>
+          <ul class="tags"><li>Cisco FMC</li><li>Linux</li><li>Log analysis</li><li>Threat intelligence</li></ul>
+        </article>
+        <article class="card">
+          <p class="meta">2026 · Prople BPO</p>
+          <h3>Core Switch Replacement &amp; Network Segmentation</h3>
+          <p>Replaced the office core switch and segmented the network during a planned 12-hour weekend window, backed by a published impact assessment and rollback plan.</p>
+          <p class="result">Internal and client-facing apps tested and verified after cutover.</p>
+          <ul class="tags"><li>Core switching</li><li>VLANs</li><li>Change management</li></ul>
+        </article>
+        <article class="card">
+          <p class="meta">2026 · Prople BPO</p>
+          <h3>HAProxy SNI Reverse Proxy (Phase 1)</h3>
+          <p>Designed an SNI-based HAProxy reverse proxy that routes TLS traffic by hostname, so published services can share public IPs and be published across two ISPs.</p>
+          <p class="result">Phase 1 deployed and verified under formal change control.</p>
+          <ul class="tags"><li>HAProxy</li><li>TLS / SNI</li><li>Dual-ISP</li></ul>
+        </article>
+        <article class="card">
+          <p class="meta">2024 · Prople BPO</p>
+          <h3>Automated OS Provisioning with WDS + MDT</h3>
+          <p>Designed and deployed Windows Deployment Services integrated with the Microsoft Deployment Toolkit for network-based OS installs on domain-joined computers.</p>
+          <p class="result">Significantly less manual setup time per machine.</p>
+          <ul class="tags"><li>WDS</li><li>MDT</li><li>Windows</li><li>Active Directory</li></ul>
+        </article>
+        <article class="card">
+          <p class="meta">2023 · Prople BPO</p>
+          <h3>LAPS Deployment</h3>
+          <p>Implemented Microsoft LAPS on Active Directory so each domain computer gets its own managed local administrator password.</p>
+          <p class="result">Shared local admin passwords eliminated across all domain computers.</p>
+          <ul class="tags"><li>Active Directory</li><li>LAPS</li><li>Endpoint security</li></ul>
+        </article>
+        <article class="card">
+          <p class="meta">Ongoing · Personal</p>
+          <h3>Linux Systems Homelab</h3>
+          <p>A CachyOS (Arch-based) workstation for experimenting with kernel tuning, GPU drivers (RADV, DXVK), Btrfs snapshots, Cloudflare WARP+ (MASQUE), and SQM/CAKE traffic shaping.</p>
+          <p class="result">Fish/Bash automation and yt-dlp + Whisper media pipelines.</p>
+          <ul class="tags"><li>CachyOS</li><li>Btrfs</li><li>SQM / CAKE</li><li>Fish / Bash</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="container">
+      <p class="section-title">Experience</p>
+      <h2 class="section-heading">Where I've worked</h2>
+      <ol class="timeline">
+        <li class="job">
+          <h3>IT Infrastructure Senior Associate</h3>
+          <p class="org">Prople BPO Inc.</p>
+          <p class="when"><span>May 2022 – Present</span><span>Mandaluyong City, NCR</span></p>
+          <ul>
+            <li>Maintain the Cisco Firepower perimeter, Linux servers, and virtual infrastructure for internal teams and client accounts.</li>
+            <li>Executed a core switch replacement and firewall maintenance windows with rollback plans and post-cutover testing.</li>
+            <li>Closed 497 of 500 tickets in five months, from VM provisioning and root-cause analysis to client support for accounts including L'Oréal.</li>
+            <li>Automated OS provisioning with WDS/MDT, deployed LAPS and Acronis EDR, and publish weekly TechCom reports on SLA compliance and ISP bandwidth.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <h3>Local IT Support</h3>
+          <p class="org">British Council (via Prople BPO IT Managed Services)</p>
+          <p class="when"><span>May 2022 – May 2023</span><span>Bonifacio Global City, NCR</span></p>
+          <ul>
+            <li>Migrated shared drives to SharePoint, upgraded network hardware, and deployed laptops via WDS over LAN.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <h3>Technical Support Engineer</h3>
+          <p class="org">Unison Computer Systems, Inc. (Client: Globe Telecom)</p>
+          <p class="when"><span>Feb 2021 – Feb 2022</span><span>Pasig City, NCR</span></p>
+          <ul>
+            <li>Staged HP/MSI laptops and deployed McAfee, CrowdStrike, LAPS, NAC Agent, and Ivanti for security compliance.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <h3>Field Support Engineer</h3>
+          <p class="org">ActionLabs IT Services Phils. Corp. (Client: Dell)</p>
+          <p class="when"><span>Oct 2020 – Dec 2020</span><span>Quezon City, NCR</span></p>
+          <ul>
+            <li>Repaired desktops and laptops on-site (motherboard, SSD, RAM) and documented diagnostics and repairs.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="container">
+      <p class="section-title">Skills</p>
+      <h2 class="section-heading">What I work with</h2>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3>Networking &amp; Security</h3>
+          <ul class="chips"><li>Cisco Firepower (FTD/FMC)</li><li>Firewall NAT &amp; policy</li><li>VLAN segmentation</li><li>HAProxy (SNI)</li><li>UniFi wireless</li><li>Cisco VPN</li><li>Perimeter threat blocking</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Systems &amp; Virtualization</h3>
+          <ul class="chips"><li>Linux (CentOS) administration</li><li>VM provisioning</li><li>Windows Server</li><li>Synology NAS / SFTP</li><li>UptimeRobot monitoring</li><li>Bash / Fish scripting</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Identity &amp; Endpoint</h3>
+          <ul class="chips"><li>Active Directory &amp; GPO</li><li>LAPS</li><li>WDS / MDT</li><li>Acronis EDR</li><li>CrowdStrike</li><li>Google Workspace</li><li>Microsoft 365 &amp; SharePoint</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Operations</h3>
+          <ul class="chips"><li>Root-cause analysis</li><li>Change management</li><li>Business continuity (BCP)</li><li>SLA reporting</li><li>Redmine ticketing</li><li>Technical documentation</li></ul>
+        </div>
+        <div class="skill-group wide">
+          <h3>Soft skills</h3>
+          <ul class="chips soft"><li>Communication</li><li>Attention to detail</li><li>Problem solving</li><li>Knowledge sharing</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="container">
+      <p class="section-title">Education &amp; Training</p>
+      <h2 class="section-heading">Background</h2>
+      <div class="edu">
+        <div class="edu-card">
+          <h3>Education &amp; Certification</h3>
+          <div class="edu-item">
+            <b>BS Computer Engineering</b>
+            <span>Jose Rizal Memorial State University · Dapitan City · 2019</span>
+            <span>Capstone: Water Meter Monitoring System</span>
+          </div>
+          <div class="edu-item">
+            <b>National Certificate II (NC II) in Computer Systems Servicing</b>
+            <span>TESDA · 2017</span>
+          </div>
+          <div class="edu-item">
+            <b>Languages</b>
+            <span>Filipino and Cebuano (native) · English (professional)</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <h3>Trainings &amp; Seminars</h3>
+          <ul class="trainings">
+            <li><span>pfSense Tech Talk<em>ICpEP Region IX Convention</em></span><small>2018</small></li>
+            <li><span>Data Business Analytics Tech Talk<em>ICpEP Region IX Convention</em></span><small>2018</small></li>
+            <li><span>Engineering Invention Contest &amp; Expo<em>ZPCDEED Council Convention (Participant)</em></span><small>2017</small></li>
+            <li><span>4th PCB Making Workshop<em>JRMSU Computer Engineering Organization</em></span><small>2017</small></li>
+            <li><span>File System Management Seminar<em>JIECEP – JRMSU Chapter</em></span><small>2017</small></li>
+            <li><span>Web Development with WordPress &amp; Joomla<em>JRMSU Computer Engineering Organization</em></span><small>2016</small></li>
+            <li><span>Basic Automation &amp; Robotics Seminar<em>JRMSU Computer Engineering Organization</em></span><small>2016</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact-band" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div>
+      <h2 id="contact-title">Let's talk</h2>
+      <p>Hiring for IT infrastructure, network, or systems administration? The fastest way to reach me is by email.</p>
+    </div>
+    <div class="contact-links">
+      <a class="btn primary" href="mailto:pacaro.francis.marlou.n@gmail.com">pacaro.francis.marlou.n@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/francomeister" rel="me noopener" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://github.com/francomeisterm" rel="me noopener" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Francis Marlou Pacaro</span>
+    <span>Built with plain HTML &amp; CSS · Hosted on GitHub Pages</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector(".theme-toggle").addEventListener("click", function () {
+    var root = document.documentElement;
+    var current = root.getAttribute("data-theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
