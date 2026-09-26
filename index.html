@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Francis Marlou Pacaro · IT Infrastructure</title>
-<meta name="description" content="Francis Marlou Pacaro is an IT Infrastructure Senior Associate in Metro Manila with 5+ years across network security, Linux and Windows servers, virtualization, and endpoint management, and a Linux kernel contributor.">
+<meta name="description" content="Francis Marlou Pacaro is an IT infrastructure professional in Metro Manila who looks after networks, servers, and endpoint security, and a Linux kernel contributor.">
 <meta name="author" content="Francis Marlou Pacaro">
 <link rel="canonical" href="https://francomeisterm.github.io/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://francomeisterm.github.io/">
 <meta property="og:title" content="Francis Marlou Pacaro · IT Infrastructure">
-<meta property="og:description" content="IT Infrastructure Senior Associate: network security, Linux and Windows servers, virtualization, and endpoint management.">
+<meta property="og:description" content="IT infrastructure professional in Metro Manila and Linux kernel contributor. Networks, servers, and endpoint security.">
 <meta name="twitter:card" content="summary">
 <link rel="preload" href="fonts/quicksand-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/quicksand-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -190,16 +190,13 @@ p { margin: 0; }
 .stat b { display: block; font-size: 32px; font-weight: 700; line-height: 1.1; color: var(--ink); }
 .stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.4; }
 @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 420px) { .stat b { font-size: 26px; } }
+@media (max-width: 420px) { .stat b { font-size: 22px; white-space: nowrap; } }
 
 /* ---------- Sections ---------- */
 section.block { padding: 64px 0 8px; }
 @media (max-width: 640px) { section.block { padding-top: 48px; } }
-.section-title {
-  font-size: 15px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
-  color: var(--accent-text); margin-bottom: 8px;
-}
 .section-heading { font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; margin-bottom: 24px; }
+.section-heading::before { content: ""; display: block; width: 44px; height: 5px; margin-bottom: 14px; border-radius: 3px; background: var(--accent); }
 
 .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
 .about p + p { margin-top: 14px; }
@@ -326,7 +323,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
       <div class="hero-inner">
         <h1>Francis Marlou Pacaro</h1>
         <p class="role">IT Infrastructure Senior Associate</p>
-        <p class="lede">I keep networks, servers, and endpoints secure and running for a multi-client BPO in Metro Manila, from firewall and core-switch changes to Linux hardening and automated workstation deployment.</p>
+        <p class="lede">I look after the network, servers, and workstations at Prople BPO in Metro Manila. I like getting to the bottom of problems instead of working around them, a habit that recently got one of my fixes merged into the Linux kernel.</p>
         <div class="cta">
           <a class="btn primary" href="mailto:pacaro.francis.marlou.n@gmail.com">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.4l8 5.2 8-5.2V7H4zm16 2.8-8 5.2-8-5.2V17h16V9.8z"/></svg>Email me</a>
@@ -347,27 +344,26 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 
   <div class="container">
     <div class="stats" role="list">
-      <div class="stat" role="listitem"><b>5+ yrs</b><span>in IT infrastructure and technical support</span></div>
-      <div class="stat" role="listitem"><b>497 / 500</b><span>infrastructure tickets closed in five months (May–Sep 2026)</span></div>
-      <div class="stat" role="listitem"><b>39.9%</b><span>fewer daily SSH brute-force attempts after perimeter blocking</span></div>
-      <div class="stat" role="listitem"><b>Linux 7.3</b><span>includes my amdgpu display driver fix (merged in 7.3-rc4)</span></div>
+      <div class="stat" role="listitem"><b>5+ years</b><span>in IT infrastructure and technical support</span></div>
+      <div class="stat" role="listitem"><b>497 of 500</b><span>tickets closed between May and September 2026</span></div>
+      <div class="stat" role="listitem"><b>39.9%</b><span>fewer SSH brute-force attempts after I tightened the firewall rules</span></div>
+      <div class="stat" role="listitem"><b>Linux 7.3</b><span>includes a graphics driver fix I wrote</span></div>
     </div>
   </div>
 
   <section class="block" id="about">
     <div class="container">
-      <p class="section-title">About</p>
-      <h2 class="section-heading">Infrastructure that stays up and stays safe</h2>
+      <h2 class="section-heading">About me</h2>
       <div class="about">
         <div>
-          <p>I work in IT infrastructure at Prople BPO, where I look after the network, servers, and endpoints that internal teams and client accounts rely on every day. My work spans Cisco Firepower perimeter changes, Linux and Windows server administration, VM provisioning, Active Directory, and hands-on support for enterprise clients such as L'Oréal.</p>
-          <p>I like problems that end with a clear root cause and a written-up fix. Outside work I run a Linux homelab on CachyOS, where I tune kernels, shape traffic, and script everything I can in Fish and Bash. When my RX 6600 hit a driver bug, I tracked it down and got the fix merged into the Linux kernel.</p>
+          <p>I've spent more than five years in IT, starting with on-site hardware repair for Dell and laptop support for Globe Telecom before moving into infrastructure at Prople BPO. These days that means firewall and switch changes, Linux and Windows servers, virtual machines, Active Directory, and hands-on support for client accounts such as L'Oréal.</p>
+          <p>The part of the job I enjoy most is finding the real cause of a problem and writing it up so it stays fixed. Outside work I run Linux at home and use it to learn. When my own graphics card started logging kernel warnings, I tracked the bug down, and my fix is now part of the Linux kernel.</p>
         </div>
         <div class="facts">
           <dl>
-            <dt>Focus</dt><dd>Network security, servers, endpoints</dd>
+            <dt>Focus</dt><dd>Networks, servers, and security</dd>
             <dt>Current</dt><dd>Prople BPO Inc.</dd>
-            <dt>Open source</dt><dd>Linux kernel contributor (amdgpu)</dd>
+            <dt>Open source</dt><dd>Linux kernel contributor</dd>
             <dt>Degree</dt><dd>BS Computer Engineering</dd>
             <dt>Based in</dt><dd>Pasig City, Philippines</dd>
             <dt>Languages</dt><dd>Filipino, Cebuano, English</dd>
@@ -379,60 +375,59 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 
   <section class="block" id="work">
     <div class="container">
-      <p class="section-title">Selected work</p>
-      <h2 class="section-heading">Projects I've delivered</h2>
+      <h2 class="section-heading">Selected work</h2>
       <div class="cards">
         <article class="card featured">
-          <p class="meta">2026 · Upstream Linux kernel (drm/amd)</p>
-          <h3>Linux Kernel Fix: amdgpu MALL Hysteresis Timer Underflow</h3>
-          <p>My RX 6600 threw a kernel warning at high refresh rates. I traced it to <code>dcn30_apply_idle_power_optimizations()</code>, where an unsigned underflow made the MALL hysteresis timer impossible to encode, so every DCN 3.0 display above ~243 Hz silently lost MALL static-screen power savings. I wrote a patch that clamps the timer to the shortest value the register can hold, and documented the reproduction from 144 Hz to 360 Hz.</p>
-          <p class="result">Reviewed by AMD and merged into mainline Linux 7.3-rc4 (September 2026).</p>
+          <p class="meta">2026 · Linux kernel</p>
+          <h3>A power-saving bug in the AMD graphics driver</h3>
+          <p>My RX 6600 started logging a kernel warning at high refresh rates. I traced it to a subtraction in the display driver that wrapped around instead of going negative. Above about 243&nbsp;Hz, that quietly switched off a memory power-saving feature (MALL) on AMD's DCN 3.0 graphics cards. I wrote a patch that falls back to the shortest delay the hardware supports, and documented how the bug behaved from 144 to 360&nbsp;Hz.</p>
+          <p class="result">Reviewed by AMD and merged into mainline Linux 7.3-rc4 in September 2026.</p>
           <div class="card-footer">
-            <ul class="tags"><li>C</li><li>Linux kernel</li><li>amdgpu / DCN 3.0</li><li>Debugging</li></ul>
-            <a class="card-link" href="https://github.com/torvalds/linux/commit/2ac2fe765ef475f409616ac0b57c4a3922749b0f" target="_blank" rel="noopener">View the commit →</a>
+            <ul class="tags"><li>C</li><li>Linux kernel</li><li>amdgpu</li><li>Debugging</li></ul>
+            <a class="card-link" href="https://github.com/torvalds/linux/commit/2ac2fe765ef475f409616ac0b57c4a3922749b0f" target="_blank" rel="noopener">Read the commit →</a>
           </div>
         </article>
         <article class="card">
           <p class="meta">2026 · Prople BPO</p>
-          <h3>SSH Hardening &amp; Perimeter Threat Blocking</h3>
-          <p>Analyzed 37 days of SSH authentication and firewall connection logs, profiled the attacking sources by network (ASN), and deployed a Cisco FMC Security Intelligence blocklist at the perimeter.</p>
-          <p class="result">Daily brute-force attempts down 39.9%, with no compromise.</p>
+          <h3>Cutting down SSH brute-force traffic</h3>
+          <p>Our Linux servers were getting a steady stream of automated login attempts. I went through 37 days of login and firewall logs, grouped the sources by the networks they came from, and blocked the worst of them at the Cisco firewall.</p>
+          <p class="result">Daily attempts dropped by 39.9%, and no systems were compromised.</p>
           <ul class="tags"><li>Cisco FMC</li><li>Linux</li><li>Log analysis</li><li>Threat intelligence</li></ul>
         </article>
         <article class="card">
           <p class="meta">2026 · Prople BPO</p>
-          <h3>Core Switch Replacement &amp; Network Segmentation</h3>
-          <p>Replaced the office core switch and segmented the network during a planned 12-hour weekend window, backed by a published impact assessment and rollback plan.</p>
-          <p class="result">Internal and client-facing apps tested and verified after cutover.</p>
+          <h3>Replacing the office core switch</h3>
+          <p>We replaced the core switch and split the office network into segments during a planned 12-hour weekend window. I prepared the maintenance notice, including the expected impact and a rollback plan.</p>
+          <p class="result">Internal and client-facing apps were tested and working after the cutover.</p>
           <ul class="tags"><li>Core switching</li><li>VLANs</li><li>Change management</li></ul>
         </article>
         <article class="card">
           <p class="meta">2026 · Prople BPO</p>
-          <h3>HAProxy SNI Reverse Proxy (Phase 1)</h3>
-          <p>Designed an SNI-based HAProxy reverse proxy that routes TLS traffic by hostname, so published services can share public IPs and be published across two ISPs.</p>
-          <p class="result">Phase 1 deployed and verified under formal change control.</p>
-          <ul class="tags"><li>HAProxy</li><li>TLS / SNI</li><li>Dual-ISP</li></ul>
+          <h3>Sharing public IP addresses with a reverse proxy</h3>
+          <p>To make better use of our public IP addresses, I designed an HAProxy setup that reads the hostname at the start of each encrypted connection and sends it to the right server. This lets several services share one address and be reached through either of our two internet providers.</p>
+          <p class="result">First phase deployed and verified through change control.</p>
+          <ul class="tags"><li>HAProxy</li><li>TLS / SNI</li><li>Dual ISP</li></ul>
         </article>
         <article class="card">
           <p class="meta">2024 · Prople BPO</p>
-          <h3>Automated OS Provisioning with WDS + MDT</h3>
-          <p>Designed and deployed Windows Deployment Services integrated with the Microsoft Deployment Toolkit for network-based OS installs on domain-joined computers.</p>
-          <p class="result">Significantly less manual setup time per machine.</p>
+          <h3>Installing Windows over the network</h3>
+          <p>Setting up computers one at a time was slow. I set up Windows Deployment Services together with the Microsoft Deployment Toolkit so new domain computers can be installed over the network.</p>
+          <p class="result">Much less hands-on setup time for each new machine.</p>
           <ul class="tags"><li>WDS</li><li>MDT</li><li>Windows</li><li>Active Directory</li></ul>
         </article>
         <article class="card">
           <p class="meta">2023 · Prople BPO</p>
-          <h3>LAPS Deployment</h3>
-          <p>Implemented Microsoft LAPS on Active Directory so each domain computer gets its own managed local administrator password.</p>
-          <p class="result">Shared local admin passwords eliminated across all domain computers.</p>
+          <h3>A unique admin password for every computer</h3>
+          <p>Domain computers shared one local administrator password, which is a real risk if it ever leaks. I rolled out Microsoft LAPS so each machine gets its own password, managed through Active Directory.</p>
+          <p class="result">No more shared local admin passwords across the domain.</p>
           <ul class="tags"><li>Active Directory</li><li>LAPS</li><li>Endpoint security</li></ul>
         </article>
         <article class="card">
           <p class="meta">Ongoing · Personal</p>
-          <h3>Linux Systems Homelab</h3>
-          <p>A CachyOS (Arch-based) workstation for experimenting with kernel tuning, GPU drivers (RADV, DXVK), Btrfs snapshots, Cloudflare WARP+ (MASQUE), and SQM/CAKE traffic shaping.</p>
-          <p class="result">Fish/Bash automation and yt-dlp + Whisper media pipelines.</p>
-          <ul class="tags"><li>CachyOS</li><li>Btrfs</li><li>SQM / CAKE</li><li>Fish / Bash</li></ul>
+          <h3>My Linux setup at home</h3>
+          <p>I run CachyOS, an Arch-based distribution, on my own PC and use it to learn: kernel tuning, graphics drivers, Btrfs snapshots, and traffic shaping that keeps the connection responsive under load. I script the repetitive parts in Fish and Bash.</p>
+          <p class="result">It's also the machine where I found the graphics driver bug above.</p>
+          <ul class="tags"><li>CachyOS</li><li>Btrfs</li><li>SQM / CAKE</li><li>Fish &amp; Bash</li></ul>
         </article>
       </div>
     </div>
@@ -440,18 +435,17 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 
   <section class="block" id="experience">
     <div class="container">
-      <p class="section-title">Experience</p>
-      <h2 class="section-heading">Where I've worked</h2>
+      <h2 class="section-heading">Experience</h2>
       <ol class="timeline">
         <li class="job">
           <h3>IT Infrastructure Senior Associate</h3>
           <p class="org">Prople BPO Inc.</p>
           <p class="when"><span>May 2022 – Present</span><span>Mandaluyong City, NCR</span></p>
           <ul>
-            <li>Maintain the Cisco Firepower perimeter, Linux servers, and virtual infrastructure for internal teams and client accounts.</li>
-            <li>Executed a core switch replacement and firewall maintenance windows with rollback plans and post-cutover testing.</li>
-            <li>Closed 497 of 500 tickets in five months, from VM provisioning and root-cause analysis to client support for accounts including L'Oréal.</li>
-            <li>Automated OS provisioning with WDS/MDT, deployed LAPS and Acronis EDR, and publish weekly TechCom reports on SLA compliance and ISP bandwidth.</li>
+            <li>Look after the Cisco Firepower firewalls, Linux servers, and virtual machines that our internal teams and client accounts rely on.</li>
+            <li>Carried out a core switch replacement and firewall maintenance windows, each with a rollback plan and testing afterward.</li>
+            <li>Closed 497 of 500 tickets between May and September 2026, from building virtual servers to supporting client accounts such as L'Oréal.</li>
+            <li>Set up automated Windows deployment with WDS and MDT, rolled out LAPS and Acronis EDR, and write the weekly TechCom report on SLAs and internet bandwidth.</li>
           </ul>
         </li>
         <li class="job">
@@ -459,7 +453,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
           <p class="org">British Council (via Prople BPO IT Managed Services)</p>
           <p class="when"><span>May 2022 – May 2023</span><span>Bonifacio Global City, NCR</span></p>
           <ul>
-            <li>Migrated shared drives to SharePoint, upgraded network hardware, and deployed laptops via WDS over LAN.</li>
+            <li>Moved the office's shared drives to SharePoint, upgraded its network, and deployed laptops over the local network with WDS.</li>
           </ul>
         </li>
         <li class="job">
@@ -467,7 +461,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
           <p class="org">Unison Computer Systems, Inc. (Client: Globe Telecom)</p>
           <p class="when"><span>Feb 2021 – Feb 2022</span><span>Pasig City, NCR</span></p>
           <ul>
-            <li>Staged HP/MSI laptops and deployed McAfee, CrowdStrike, LAPS, NAC Agent, and Ivanti for security compliance.</li>
+            <li>Prepared HP and MSI laptops for Globe and installed security tools such as McAfee, CrowdStrike, and Ivanti.</li>
           </ul>
         </li>
         <li class="job">
@@ -475,7 +469,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
           <p class="org">ActionLabs IT Services Phils. Corp. (Client: Dell)</p>
           <p class="when"><span>Oct 2020 – Dec 2020</span><span>Quezon City, NCR</span></p>
           <ul>
-            <li>Repaired desktops and laptops on-site (motherboard, SSD, RAM) and documented diagnostics and repairs.</li>
+            <li>Repaired Dell desktops and laptops on-site, replacing motherboards, SSDs, and memory, and wrote diagnostic and repair reports.</li>
           </ul>
         </li>
         <li class="job">
@@ -483,9 +477,9 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
           <p class="org">Dr. Jose Rizal Memorial Hospital (DOH)</p>
           <p class="when"><span>2018</span><span>Dapitan City, Zamboanga del Norte</span></p>
           <ul>
-            <li>Restored X-ray image delivery to the OPD by finding a missing IP on the imaging network shared by the X-ray room, OPD, and ER.</li>
-            <li>Fixed IP conflicts and intermittent lab connectivity caused by bad UTP cabling, and helped re-address all three hospital buildings with a building-based IP scheme.</li>
-            <li>Inventoried computers and IP assignments hospital-wide and mapped each building's network.</li>
+            <li>Restored X-ray image transfers to the outpatient department after finding a missing address on the imaging network it shares with the X-ray room and ER.</li>
+            <li>Resolved IP conflicts, replaced faulty lab cabling, and helped re-address all three hospital buildings.</li>
+            <li>Inventoried the hospital's computers and IP assignments and mapped each building's network.</li>
           </ul>
         </li>
       </ol>
@@ -494,28 +488,27 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 
   <section class="block" id="skills">
     <div class="container">
-      <p class="section-title">Skills</p>
-      <h2 class="section-heading">What I work with</h2>
+      <h2 class="section-heading">Skills and tools</h2>
       <div class="skill-groups">
         <div class="skill-group">
-          <h3>Networking &amp; Security</h3>
-          <ul class="chips"><li>Cisco Firepower (FTD/FMC)</li><li>Firewall NAT &amp; policy</li><li>VLAN segmentation</li><li>HAProxy (SNI)</li><li>UniFi wireless</li><li>Cisco VPN</li><li>Perimeter threat blocking</li></ul>
+          <h3>Networking and security</h3>
+          <ul class="chips"><li>Cisco Firepower (FTD/FMC)</li><li>Firewall NAT and policy</li><li>VLAN segmentation</li><li>HAProxy (SNI)</li><li>UniFi wireless</li><li>Cisco VPN</li><li>Perimeter threat blocking</li></ul>
         </div>
         <div class="skill-group">
-          <h3>Systems &amp; Virtualization</h3>
-          <ul class="chips"><li>Linux (CentOS) administration</li><li>VM provisioning</li><li>Windows Server</li><li>Synology NAS / SFTP</li><li>UptimeRobot monitoring</li><li>Bash / Fish scripting</li><li>C (Linux kernel)</li><li>Kernel debugging</li></ul>
+          <h3>Systems</h3>
+          <ul class="chips"><li>Linux (CentOS) administration</li><li>VM provisioning</li><li>Windows Server</li><li>Synology NAS and SFTP</li><li>UptimeRobot monitoring</li><li>Bash and Fish scripting</li><li>C (Linux kernel)</li><li>Kernel debugging</li></ul>
         </div>
         <div class="skill-group">
-          <h3>Identity &amp; Endpoint</h3>
-          <ul class="chips"><li>Active Directory &amp; GPO</li><li>LAPS</li><li>WDS / MDT</li><li>Acronis EDR</li><li>CrowdStrike</li><li>Google Workspace</li><li>Microsoft 365 &amp; SharePoint</li></ul>
+          <h3>Identity and endpoints</h3>
+          <ul class="chips"><li>Active Directory and GPO</li><li>LAPS</li><li>WDS and MDT</li><li>Acronis EDR</li><li>CrowdStrike</li><li>Google Workspace</li><li>Microsoft 365 and SharePoint</li></ul>
         </div>
         <div class="skill-group">
           <h3>Operations</h3>
-          <ul class="chips"><li>Root-cause analysis</li><li>Change management</li><li>Business continuity (BCP)</li><li>SLA reporting</li><li>Redmine ticketing</li><li>Technical documentation</li></ul>
+          <ul class="chips"><li>Root-cause analysis</li><li>Change management</li><li>Business continuity (BCP)</li><li>SLA reporting</li><li>Redmine ticketing</li><li>Technical writing</li></ul>
         </div>
         <div class="skill-group wide">
-          <h3>Soft skills</h3>
-          <ul class="chips soft"><li>Communication</li><li>Attention to detail</li><li>Problem solving</li><li>Knowledge sharing</li></ul>
+          <h3>Working style</h3>
+          <ul class="chips soft"><li>Clear communication</li><li>Attention to detail</li><li>Patient troubleshooting</li><li>Knowledge sharing</li></ul>
         </div>
       </div>
     </div>
@@ -523,15 +516,14 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 
   <section class="block" id="education">
     <div class="container">
-      <p class="section-title">Education &amp; Training</p>
-      <h2 class="section-heading">Background</h2>
+      <h2 class="section-heading">Education and training</h2>
       <div class="edu">
         <div class="edu-card">
-          <h3>Education &amp; Certification</h3>
+          <h3>Education and certification</h3>
           <div class="edu-item">
             <b>BS Computer Engineering</b>
             <span>Jose Rizal Memorial State University · Dapitan City · 2019</span>
-            <span>Capstone: Water Meter Monitoring System</span>
+            <span>Capstone project: Water Meter Monitoring System</span>
           </div>
           <div class="edu-item">
             <b>National Certificate II (NC II) in Computer Systems Servicing</b>
@@ -539,19 +531,19 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
           </div>
           <div class="edu-item">
             <b>Languages</b>
-            <span>Filipino and Cebuano (native) · English (professional)</span>
+            <span>Filipino and Cebuano (native), English (professional)</span>
           </div>
         </div>
         <div class="edu-card">
-          <h3>Trainings &amp; Seminars</h3>
+          <h3>Trainings and seminars</h3>
           <ul class="trainings">
             <li><span>pfSense Tech Talk<em>ICpEP Region IX Convention</em></span><small>2018</small></li>
             <li><span>Data Business Analytics Tech Talk<em>ICpEP Region IX Convention</em></span><small>2018</small></li>
-            <li><span>Engineering Invention Contest &amp; Expo<em>ZPCDEED Council Convention (Participant)</em></span><small>2017</small></li>
+            <li><span>Engineering Invention Contest and Expo<em>ZPCDEED Council Convention (participant)</em></span><small>2017</small></li>
             <li><span>4th PCB Making Workshop<em>JRMSU Computer Engineering Organization</em></span><small>2017</small></li>
-            <li><span>File System Management Seminar<em>JIECEP – JRMSU Chapter</em></span><small>2017</small></li>
-            <li><span>Web Development with WordPress &amp; Joomla<em>JRMSU Computer Engineering Organization</em></span><small>2016</small></li>
-            <li><span>Basic Automation &amp; Robotics Seminar<em>JRMSU Computer Engineering Organization</em></span><small>2016</small></li>
+            <li><span>File System Management Seminar<em>JIECEP, JRMSU Chapter</em></span><small>2017</small></li>
+            <li><span>Web Development with WordPress and Joomla<em>JRMSU Computer Engineering Organization</em></span><small>2016</small></li>
+            <li><span>Basic Automation and Robotics Seminar<em>JRMSU Computer Engineering Organization</em></span><small>2016</small></li>
           </ul>
         </div>
       </div>
@@ -562,8 +554,8 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 <section class="contact-band" id="contact" aria-labelledby="contact-title">
   <div class="container">
     <div>
-      <h2 id="contact-title">Let's talk</h2>
-      <p>Hiring for IT infrastructure, network, or systems administration? The fastest way to reach me is by email.</p>
+      <h2 id="contact-title">Get in touch</h2>
+      <p>If you'd like to talk about a role, a project, or anything on this page, email is the quickest way to reach me.</p>
     </div>
     <div class="contact-links">
       <a class="btn primary" href="mailto:pacaro.francis.marlou.n@gmail.com">pacaro.francis.marlou.n@gmail.com</a>
@@ -576,7 +568,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
 <footer>
   <div class="container">
     <span>© 2026 Francis Marlou Pacaro</span>
-    <span>Built with plain HTML &amp; CSS · Hosted on GitHub Pages</span>
+    <span>Plain HTML and CSS, hosted on GitHub Pages</span>
   </div>
 </footer>
 
