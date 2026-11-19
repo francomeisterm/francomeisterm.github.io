@@ -398,9 +398,9 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
         <article class="card">
           <p class="meta">2026 · Prople BPO</p>
           <h3>Cutting down SSH brute-force traffic</h3>
-          <p>Our Linux servers were getting a steady stream of automated login attempts. I went through 37 days of login and firewall logs, grouped the sources by the networks they came from, and blocked the worst of them at the Cisco firewall.</p>
-          <p class="result">Daily attempts dropped by 39.9%, and no systems were compromised.</p>
-          <ul class="tags"><li>Cisco FMC</li><li>Linux</li><li>Log analysis</li><li>Threat intelligence</li></ul>
+          <p>Our internet-facing Linux servers were getting a steady stream of automated login attempts. I went through 37 days of login and firewall logs, grouped the sources by the networks they came from, and blocked the worst of them at the firewall. I then proposed allowlisting so only approved networks can reach SSH.</p>
+          <p class="result">Blocking alone cut daily attempts by 39.9%. Allowlisting took failed logins from about 2,500 a day to zero, with no systems compromised.</p>
+          <ul class="tags"><li>Firewall policy</li><li>Linux</li><li>Log analysis</li><li>Threat intelligence</li></ul>
         </article>
         <article class="card">
           <p class="meta">2026 · Prople BPO</p>
@@ -502,11 +502,11 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
       <div class="skill-groups">
         <div class="skill-group">
           <h3>Networking and security</h3>
-          <ul class="chips"><li>Cisco Firepower (FTD/FMC)</li><li>Firewall NAT and policy</li><li>VLAN segmentation</li><li>HAProxy (SNI)</li><li>UniFi wireless</li><li>Cisco VPN</li><li>Perimeter threat blocking</li></ul>
+          <ul class="chips"><li>Cisco Firepower (FTD/FMC)</li><li>Firewall NAT and policy</li><li>VLAN segmentation</li><li>HAProxy (SNI)</li><li>UniFi wireless</li><li>Remote-access VPN</li><li>Perimeter threat blocking</li></ul>
         </div>
         <div class="skill-group">
           <h3>Systems</h3>
-          <ul class="chips"><li>Linux (CentOS) administration</li><li>VMware and VM provisioning</li><li>Windows Server</li><li>Synology NAS and SFTP</li><li>UptimeRobot monitoring</li><li>Bash and Fish scripting</li><li>C (Linux kernel)</li><li>Kernel debugging</li></ul>
+          <ul class="chips"><li>Linux (CentOS) administration</li><li>VMware and VM provisioning</li><li>Windows Server</li><li>NAS and file transfer</li><li>Uptime monitoring</li><li>Bash and Fish scripting</li><li>C (Linux kernel)</li><li>Kernel debugging</li></ul>
         </div>
         <div class="skill-group">
           <h3>Identity and endpoints</h3>
@@ -514,7 +514,7 @@ footer .container { padding-top: 18px; padding-bottom: 18px; display: flex; flex
         </div>
         <div class="skill-group">
           <h3>Operations</h3>
-          <ul class="chips"><li>Root-cause analysis</li><li>Change management</li><li>Business continuity (BCP)</li><li>SLA reporting</li><li>Redmine ticketing</li><li>Technical writing</li></ul>
+          <ul class="chips"><li>Root-cause analysis</li><li>Change management</li><li>Business continuity (BCP)</li><li>SLA reporting</li><li>Ticketing systems</li><li>Technical writing</li></ul>
         </div>
         <div class="skill-group wide">
           <h3>Working style</h3>
